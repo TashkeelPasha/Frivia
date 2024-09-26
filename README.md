@@ -1,16 +1,102 @@
-# frivia
+# Question-Answer App
 
-A new Flutter project.
+This is a **Flutter-based mobile application** that fetches trivia questions from the **Trivia API** and displays them in a question-answer format. Users can test their knowledge across different categories and difficulty levels with a smooth and interactive interface.
+
+## Table of Contents
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [App Architecture](#app-architecture)
+- [API Integration](#api-integration)
+- [License](#license)
+
+## Features
+- Fetches random trivia questions from the [Trivia API](https://opentdb.com/api_config.php).
+- Questions are categorized based on difficulty levels: **Easy**, **Medium**, and **Hard**.
+- Supports **Light** and **Dark Mode**.
+- Interactive UI with sliders and switches to adjust difficulty and theme preferences.
+- Simple and intuitive navigation.
+
+
+
+## Screenshots
+
+| Light Mode | Dark Mode |
+|------------|-----------|
+| <img src="assets/screenshots/light_mode.png" alt="Light Mode" width="300"/> | <img src="assets/screenshots/dark_mode.png" alt="Dark Mode" width="300"/> |
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
+To run this app, you'll need the following tools installed on your machine:
+- [Flutter SDK](https://flutter.dev/docs/get-started/install) (version 2.0 or later)
+- [Dart SDK](https://dart.dev/get-dart)
+- A code editor like [VSCode](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio).
 
-A few resources to get you started if this is your first Flutter project:
+### Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Clone the repository:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    ```bash
+    git clone https://github.com/your-username/question-answer-app.git
+    cd question-answer-app
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    flutter pub get
+    ```
+
+3. **Run the app:**
+
+    Use the following command to run the app on your emulator or connected device.
+
+    ```bash
+    flutter run
+    ```
+
+## App Architecture
+
+The app is built using **Provider** for state management and follows a simple but scalable architecture:
+
+- **UI Layer:** Contains all the screens and widgets.
+- **Data Layer:** Manages API calls and responses from the Trivia API.
+- **State Management:** Uses `Provider` for managing the theme and difficulty level of the questions.
+
+### Files Structure:
+```bash
+lib/
+│
+├── providers/
+│   └── theme_provider.dart  # Manages light/dark theme toggling
+│    └──game_provider
+│
+├── screens/
+│   ├── home.dart             # Main screen with theme and difficulty settings
+│   └── home_page.dart        # Displays trivia questions
+│
+└── main.dart                 # App entry point
+```
+
+## API Integration
+This app uses the Trivia API to fetch trivia questions. The API integration is handled with Dio for HTTP requests.
+
+Sample API call:
+```dart
+_dio.options.baseUrl = 'https://opentdb.com/api.php';
+
+var _response = await _dio.get(
+      '',
+      queryParameters: {
+        'amount': 10,
+        'type': 'boolean',
+        'difficulty': difficulty, // or you can manually assign a difficulty here like 'easy' , 'medium'
+      },
+    );
+
+```
+
