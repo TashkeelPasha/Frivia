@@ -25,7 +25,7 @@ This is a **Flutter-based mobile application** that fetches trivia questions fro
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| <img src="assets/lightmode.png" alt="Light Mode" width="300"/> | <img src="assets/darkmodepng" alt="Dark Mode" width="300"/> |
+| <img src="https://github.com/TashkeelPasha/Frivia/blob/main/Assets/lightmode.png" alt="Light Mode" width="300"/> | <img src="https://github.com/TashkeelPasha/Frivia/blob/main/Assets/darkmode.png" alt="Dark Mode" width="300"/> |
 
 
 ## Getting Started
