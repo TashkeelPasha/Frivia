@@ -41,8 +41,8 @@ To run this app, you'll need the following tools installed on your machine:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/question-answer-app.git
-    cd question-answer-app
+    git clone https://github.com/TashkeelPasha/Frivia.git
+    cd Frivia
     ```
 
 2. **Install dependencies:**
